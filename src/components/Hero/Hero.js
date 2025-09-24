@@ -56,7 +56,7 @@ function Hero() {
                     1000,
                     'A....',
                     1000,
-                    'A.... cool guy?',
+                    'A.... cool guy? XD',
                     1000,
                     "Ok...",
                     1000,

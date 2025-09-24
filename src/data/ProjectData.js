@@ -1,13 +1,14 @@
 // --------------------------------------- Project List
 export const ProjectList = [
   {
-    img: "/ykte-feature-graphic.png",
-    title: "YouKnowTheEnding",
+    img: "/project/soranime.png",
+    title: "Soranime Streaming",
     description:
-      "A cross-platform mobile game (in closed testing) where players try to find the missing pieces of a story.",
-    tech_stack: ["React Native", "Google Cloud", "NextJs", "TailwindCSS"],
-    github_url: "",
-    demo_url: "https://youknowtheending.net/",
+      "An anime streaming website that uses Google Drive as its primary database, featuring an easy management system. It is equipped with a MyAnimeList database scraping feature and implements Generative AI to modify film synopses to be more engaging.",
+    tech_stack: ["NextJs", "Google Cloud", "NextJs", "TailwindCSS"],
+    github_url: "", 
+    demo_url: "https://soranimee.vercel.app/",
+    //https://youknowtheending.net/
   },
   {
     img: "/renr-responsive.png",
