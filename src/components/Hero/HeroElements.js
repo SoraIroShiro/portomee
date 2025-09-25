@@ -2,6 +2,8 @@ import styled, { keyframes } from "styled-components";
 import { Link as LinkScroll } from "react-scroll";
 
 export const HeroContainer = styled.div`
+height: 100vh;
+min-height: 600px;
   padding-bottom: 2rem;
   padding-top: 4rem;
   padding-right: 1rem;
@@ -10,6 +12,7 @@ export const HeroContainer = styled.div`
   margin-left: auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
 
   @media (min-width: 576px) {
     max-width: 540px;
