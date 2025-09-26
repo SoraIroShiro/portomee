@@ -2,14 +2,14 @@ import styled from "@emotion/styled";
 
 export const DetailContainer = styled.div`
   max-width: 1200px;
-  width: 100%; /* Tambahkan ini agar mengikuti lebar browser */
+  width: 100%; 
   margin: 0 auto;
   padding: 8rem 2rem 4rem;
   min-height: 100vh;
   background: #ffffffff;
-  box-sizing: border-box; /* Pastikan padding tidak overflow */
+  box-sizing: border-box; 
   
-  /* Responsive padding untuk layar kecil */
+ 
   @media (max-width: 1200px) {
     padding: 6rem 1.5rem 3rem;
   }
@@ -49,11 +49,11 @@ export const ProjectHeader = styled.div`
     color: #070707ff;
     
     @media (max-width: 768px) {
-      font-size: 2rem; /* Lebih kecil di tablet */
+      font-size: 2rem;
     }
     
     @media (max-width: 480px) {
-      font-size: 1.8rem; /* Lebih kecil di mobile */
+      font-size: 1.8rem; 
     }
   }
   
@@ -66,7 +66,7 @@ export const ProjectHeader = styled.div`
     
     @media (max-width: 768px) {
       font-size: 1.1rem;
-      padding: 0 1rem; /* Tambah padding di mobile */
+      padding: 0 1rem;
     }
     
     @media (max-width: 480px) {
@@ -147,7 +147,7 @@ export const TechStack = styled.div`
   
   @media (max-width: 480px) {
     gap: 8px;
-    justify-content: center; /* Center tech badges di mobile */
+    justify-content: center; 
   }
 `;
 
@@ -169,23 +169,23 @@ export const Screenshots = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin: 1rem 0;
-  width: 100%; /* Pastikan mengikuti lebar kontainer */
+  width: 100%; 
 
   img {
-    flex: 1 1 calc(100% - 10px); /* 3 gambar per baris dengan gap */
-    max-width: calc(100% - 10px); /* Batasi lebar maksimal */
-    min-width: 200px; /* Lebar minimal agar tidak terlalu kecil */
+    flex: 1 1 calc(100% - 10px); 
+    max-width: calc(100% - 10px); 
+    min-width: 200px; 
     object-fit: cover;
     border-radius: 10px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     
-    /* Responsive: 2 gambar per baris di tablet */
+
     @media (max-width: 768px) {
       flex: 1 1 calc(100% - 10px);
       max-width: calc(100% - 10px);
     }
     
-    /* Responsive: 1 gambar per baris di mobile */
+
     @media (max-width: 480px) {
       flex: 1 1 100%;
       max-width: 100%;
