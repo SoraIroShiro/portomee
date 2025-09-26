@@ -2,7 +2,7 @@
 export const ProjectList = [
   { 
     id: "private-project",
-    img: "/project/soranime.png",
+    img: "/project/soranime-stream/soranime.png",
     title: "Soranime Streaming",
     description:
       "An anime streaming website that uses Google Drive as its primary database, featuring an easy management system. It is equipped with a MyAnimeList database scraping feature and implements Generative AI to modify film synopses to be more engaging.",
@@ -11,17 +11,18 @@ export const ProjectList = [
     demo_url: "https://soranimee.vercel.app/",
     fullDescription: "This is a comprehensive e-commerce platform built with modern web technologies...",
     features: [
-      "User authentication and authorization",
-      "Product catalog with search and filtering",
-      "Shopping cart functionality",
-      "Payment gateway integration",
-      "Admin dashboard for product management"
+      "User Admin authentication and authorization",
+      "Anime catalog with information sourced from MyAnimeList",
+      "Google Drive as the primary database for streaming content",
+      "The dashboard and the landing page are hosted on separate servers for security purposes.",
+      "Admin dashboard for anime management"
     ],
-    challenges: "The main challenge was implementing secure payment processing...",
+    challenges: "The main challenge was implementing scraping from MyAnimeList due to frequent changes in their HTML structure. This was overcome by using a headless browser to dynamically load content.",
     screenshots: [
-      "/projects/ecommerce-1.png",
-      "/projects/ecommerce-2.png",
-      "/projects/ecommerce-3.png"
+      "/project/soranime-stream/soranime-1.png",
+      "/project/soranime-stream/soranime-2.png",
+      "/project/soranime-stream/soranime-3.png",
+      "/project/soranime-stream/soranime-4.png",
     ]
   },
   

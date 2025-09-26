@@ -10,6 +10,7 @@ import {
     TechStack,
     TechBadge,
     ButtonGroup,
+    Screenshots
 } from "./ProjectDetailElements"
 
 
@@ -63,6 +64,17 @@ function ProjectDetail() {
         <ProjectSection>
           <h2>Challenges & Solutions</h2>
           <p>{project.challenges}</p>
+        </ProjectSection>
+      )}
+
+      {project.screenshots && (
+        <ProjectSection>
+          <h2>Screenshots</h2>
+          <Screenshots>
+            {project.screenshots.map((screenshot, index) => (
+              <img key={index} src={screenshot} alt={`Screenshot ${index + 1}`} />
+            ))}
+          </Screenshots>
         </ProjectSection>
       )}
 

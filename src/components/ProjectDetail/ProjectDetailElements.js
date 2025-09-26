@@ -92,6 +92,19 @@ export const TechBadge = styled.span`
   font-size: 0.9rem;
 `;
 
+export const Screenshots = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 1rem 0;
+
+  img {
+    max-width: 100vh;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+`;
+
 export const ButtonGroup = styled.div`
   display: flex;
   gap: 1rem;
