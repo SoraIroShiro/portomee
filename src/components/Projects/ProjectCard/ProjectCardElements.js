@@ -21,8 +21,23 @@ export const CardLeft = styled.div`
   justify-self: center;
   height: 100%;
   padding: 2rem 0;
+  overflow: hidden;
+  
   img {
     object-fit: cover;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    &:active {
+      transform: scale(0.98);
+    }
   }
 `;
 

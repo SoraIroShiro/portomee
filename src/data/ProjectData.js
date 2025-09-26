@@ -1,6 +1,7 @@
 // --------------------------------------- Project List
 export const ProjectList = [
-  {
+  { 
+    id: "private-project",
     img: "/project/soranime.png",
     title: "Soranime Streaming",
     description:
@@ -8,7 +9,20 @@ export const ProjectList = [
     tech_stack: ["NextJs", "VueJs", "NodeJs", "TailwindCSS", "Python", "MongoDB", "LLM Apis"],
     github_url: "https://github.com/SoraIroShiro/soranime", 
     demo_url: "https://soranimee.vercel.app/",
-    //https://youknowtheending.net/
+    fullDescription: "This is a comprehensive e-commerce platform built with modern web technologies...",
+    features: [
+      "User authentication and authorization",
+      "Product catalog with search and filtering",
+      "Shopping cart functionality",
+      "Payment gateway integration",
+      "Admin dashboard for product management"
+    ],
+    challenges: "The main challenge was implementing secure payment processing...",
+    screenshots: [
+      "/projects/ecommerce-1.png",
+      "/projects/ecommerce-2.png",
+      "/projects/ecommerce-3.png"
+    ]
   },
   
 ];
