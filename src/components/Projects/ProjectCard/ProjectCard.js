@@ -54,13 +54,6 @@ function ProjectCard() {
                 ))}
               </TechCardContainer>
               <BtnGroup>
-                <button 
-                  className="btn PrimaryBtn btn-shadow"
-                  onClick={() => handleImageClick(list.id || index)}
-                  style={{ marginRight: '10px' }}
-                >
-                  View Details
-                </button>
                 {list.github_url.length > 0 && (
                   <a
                     className="btn SecondaryBtn btn-shadow"
