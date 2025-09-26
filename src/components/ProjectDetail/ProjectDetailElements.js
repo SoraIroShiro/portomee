@@ -200,9 +200,16 @@ export const ButtonGroup = styled.div`
   margin: 3rem 0;
   
   @media (max-width: 768px) {
+    align-items: center;
+    gap: 0.8rem;
+    margin: 2rem 0;
+    justify-content: center;
+  }
+    @media (max-width: 240px) {
     flex-direction: column;
     align-items: center;
     gap: 0.8rem;
     margin: 2rem 0;
+    justify-content: center;
   }
 `;
