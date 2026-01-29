@@ -1,23 +1,42 @@
 // --------------------------------------- Project List
 export const ProjectList = [
-  { 
+  {
     id: "private-project",
-    img: "/project/soranime-stream/soranime.png",
+    img: "/project/soranime-stream/soranime-1.png",
     title: "Soranime Streaming",
     description:
-      "An anime streaming website that uses Google Drive as its primary database, featuring an easy management system. It is equipped with a MyAnimeList database scraping feature and implements Generative AI to modify film synopses to be more engaging.",
-    tech_stack: ["NextJs", "VueJs", "NodeJs", "TailwindCSS", "Python", "MongoDB", "LLM Apis"],
-    github_url: "https://github.com/SoraIroShiro/soranime", 
-    demo_url: "https://soranime-production.vercel.app//",
-    fullDescription: "This is a comprehensive e-commerce platform built with modern web technologies...",
-    features: [
-      "User Admin authentication and authorization",
-      "Anime catalog with information sourced from Anilist",
-      "Google Drive as the primary database for streaming content",
-      "The dashboard and the landing page are hosted on separate servers for security purposes.",
-      "Admin dashboard for anime management"
+      "A modern anime streaming platform that uses AniList API for anime information and Google Drive for video storage, featuring user authentication, admin management system, and a responsive interface built with Next.js.",
+
+    tech_stack: [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "Tailwind CSS",
+      "Node.js",
+      "AniList GraphQL API",
     ],
-    challenges: "The main challenge was implementing scraping from MyAnimeList due to frequent changes in their HTML structure. This was overcome by using a headless browser to dynamically load content.",
+
+    github_url: "https://github.com/SoraIroShiro/soranime",
+
+    demo_url: "https://soranime-production.vercel.app/",
+
+    fullDescription:
+      "This is a comprehensive anime streaming platform built with modern web technologies. The application leverages AniList's GraphQL API for accurate anime information and metadata, while using Google Drive as the primary storage solution for video content. The platform features a clean, responsive interface with user authentication, admin management capabilities, and an intuitive anime browsing experience.",
+
+    features: [
+      "User authentication and authorization with JWT",
+      "Admin dashboard for anime management and content uploading",
+      "Integration with AniList GraphQL API for comprehensive anime data",
+      "Google Drive integration for video storage and streaming",
+      "Responsive design with modern UI components",
+      "Real-time anime search and filtering",
+      "Episode management and playback system",
+      "MongoDB database for user data and anime metadata storage",
+      "Secure middleware for protected routes",
+    ],
+
+    challenges:
+      "The main challenge was integrating multiple data sources effectively - combining AniList's comprehensive anime database with custom Google Drive storage links, while maintaining fast loading times and a seamless user experience. This was overcome by implementing efficient data caching strategies and optimizing the GraphQL queries to fetch only necessary data.",
     screenshots: [
       "/project/soranime-stream/soranime-1.png",
       "/project/soranime-stream/soranime-2.png",
@@ -26,9 +45,8 @@ export const ProjectList = [
       "/project/soranime-stream/soranime-5.png",
       "/project/soranime-stream/soranime-6.png",
       "/project/soranime-stream/soranime-7.png",
-    ]
+    ],
   },
-  
 ];
 
 // --------------------------------------- Skills
