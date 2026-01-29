@@ -8,11 +8,11 @@ export const ProjectList = [
       "An anime streaming website that uses Google Drive as its primary database, featuring an easy management system. It is equipped with a MyAnimeList database scraping feature and implements Generative AI to modify film synopses to be more engaging.",
     tech_stack: ["NextJs", "VueJs", "NodeJs", "TailwindCSS", "Python", "MongoDB", "LLM Apis"],
     github_url: "https://github.com/SoraIroShiro/soranime", 
-    demo_url: "https://soranimee.vercel.app/",
+    demo_url: "https://soranime-production.vercel.app//",
     fullDescription: "This is a comprehensive e-commerce platform built with modern web technologies...",
     features: [
       "User Admin authentication and authorization",
-      "Anime catalog with information sourced from MyAnimeList",
+      "Anime catalog with information sourced from Anilist",
       "Google Drive as the primary database for streaming content",
       "The dashboard and the landing page are hosted on separate servers for security purposes.",
       "Admin dashboard for anime management"
@@ -23,6 +23,9 @@ export const ProjectList = [
       "/project/soranime-stream/soranime-2.png",
       "/project/soranime-stream/soranime-3.png",
       "/project/soranime-stream/soranime-4.png",
+      "/project/soranime-stream/soranime-5.png",
+      "/project/soranime-stream/soranime-6.png",
+      "/project/soranime-stream/soranime-7.png",
     ]
   },
   
