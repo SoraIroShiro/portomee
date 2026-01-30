@@ -7,7 +7,7 @@ const Header = ({ toggle }) => {
       <Nav>
         <Logo to="home" smooth={true} duration={500} offset={-40}>
           <img src="/me/SoraLogo..png" alt="logo" />
-          <span>Fiqi</span>
+          <span>Vii_Dev</span>
         </Logo>
         <NavMenu>
           <NavLink className="menu-item" to="projects" smooth={true} duration={500} offset={-40}>

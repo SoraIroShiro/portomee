@@ -15,8 +15,6 @@ import {
   HighlightCard,
   PortraitCard,
   PortraitImage,
-  PortraitTag,
-  PortraitMeta,
   ScrollDown,
   ScrollLink,
 } from "./HeroElements";
