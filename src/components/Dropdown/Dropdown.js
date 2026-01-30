@@ -4,11 +4,10 @@ import styled from "@emotion/styled";
 import { Link as ScrollLink } from "react-scroll";
 
 const SiderBar = styled.div`
-  background: #151418;
+  background: rgba(15, 17, 21, 0.98);
   position: fixed;
   height: 100%;
   width: 100%;
-  /* top: 0; */
   left: 0;
   z-index: 999;
   transition: 0.3s ease-in-out;
@@ -28,6 +27,7 @@ const CloseIcon = styled(FaTimes)`
   top: 2rem;
   cursor: pointer;
 `;
+
 export const NavMenu = styled.div`
   display: flex;
   justify-content: center;
@@ -42,18 +42,19 @@ export const NavMenu = styled.div`
 export const NavLink = styled(ScrollLink)`
   color: #fff;
   cursor: pointer;
-  font-size: 1.7rem;
+  font-size: 1.6rem;
+  font-weight: 600;
 
   &:hover {
-    color: rgb(119, 119, 121);
+    color: var(--accent);
   }
 `;
 
 export const NavBtn = styled.div`
   display: flex;
   justify-content: center;
-  margin-top: 5rem;
-  font-size: 1.7rem;
+  margin-top: 3rem;
+  font-size: 1.1rem;
 `;
 
 function Dropdown({ isOpen, toggle }) {
@@ -61,31 +62,19 @@ function Dropdown({ isOpen, toggle }) {
     <SiderBar isOpen={isOpen} onClick={toggle}>
       <CloseIcon onClick={toggle} />
       <NavMenu>
-        <NavLink
-          onClick={toggle}
-          className="menu-item"
-          to="projects"
-        >
+        <NavLink onClick={toggle} className="menu-item" to="projects" smooth={true} duration={500}>
           Projects
         </NavLink>
-        <NavLink
-          onClick={toggle}
-          className="menu-item"
-          to="about"
-        >
+        <NavLink onClick={toggle} className="menu-item" to="about" smooth={true} duration={500}>
           About
         </NavLink>
-        <NavLink
-          onClick={toggle}
-          className="menu-item"
-          to="contact"
-        >
+        <NavLink onClick={toggle} className="menu-item" to="contact" smooth={true} duration={500}>
           Contact
         </NavLink>
       </NavMenu>
       <NavBtn onClick={toggle}>
         <a
-          className="btn PrimaryBtn"
+          className="btn PrimaryBtn btn-shadow"
           href="/resume/resume_fiqi.pdf"
           download="resume_fiqi.pdf"
           target="_blank"

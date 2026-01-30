@@ -1,141 +1,90 @@
 import styled from "@emotion/styled";
 
 export const DetailContainer = styled.div`
-  max-width: 1200px;
-  width: 100%; 
+  max-width: 1100px;
+  width: 100%;
   margin: 0 auto;
-  padding: 8rem 2rem 4rem;
+  padding: 7rem 2rem 4rem;
   min-height: 100vh;
-  background: #ffffffff;
-  box-sizing: border-box; 
-  
- 
+  background: var(--bg);
+  box-sizing: border-box;
+
   @media (max-width: 1200px) {
     padding: 6rem 1.5rem 3rem;
   }
-  
+
   @media (max-width: 768px) {
     padding: 5rem 1rem 2rem;
-  }
-  
-  @media (max-width: 480px) {
-    padding: 4rem 0.5rem 2rem;
   }
 `;
 
 export const BackButton = styled.button`
-  background: #f6f6f6;
-  color: #151418;
-  border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 5px;
+  background: var(--surface-2);
+  color: var(--text);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.6rem 1.2rem;
+  border-radius: 999px;
   cursor: pointer;
   margin-bottom: 2rem;
-  font-weight: 500;
-  transition: background 0.3s ease;
-  
+  font-weight: 600;
+  transition: transform 0.2s ease;
+
   &:hover {
-    background: #e0e0e0;
+    transform: translateY(-1px);
   }
 `;
 
 export const ProjectHeader = styled.div`
   text-align: center;
   margin-bottom: 3rem;
-  
+
   h1 {
-    font-size: 2.5rem;
+    font-size: clamp(2.1rem, 4vw, 2.9rem);
     margin-bottom: 1rem;
-    color: #070707ff;
-    
-    @media (max-width: 768px) {
-      font-size: 2rem;
-    }
-    
-    @media (max-width: 480px) {
-      font-size: 1.8rem; 
-    }
+    color: var(--text);
   }
-  
+
   p {
-    font-size: 1.2rem;
-    color: rgb(119, 119, 121);
-    max-width: 800px;
+    font-size: 1.05rem;
+    color: var(--muted);
+    max-width: 820px;
     margin: 0 auto;
-    line-height: 1.6;
-    
-    @media (max-width: 768px) {
-      font-size: 1.1rem;
-      padding: 0 1rem;
-    }
-    
-    @media (max-width: 480px) {
-      font-size: 1rem;
-    }
+    line-height: 1.7;
   }
 `;
 
 export const ProjectImage = styled.img`
   width: 100%;
-  max-width: 800px;
+  max-width: 860px;
   height: auto;
-  border-radius: 10px;
+  border-radius: 18px;
   margin: 2rem auto;
   display: block;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-  
-  @media (max-width: 768px) {
-    margin: 1.5rem auto;
-    border-radius: 8px;
-  }
-  
-  @media (max-width: 480px) {
-    margin: 1rem auto;
-    border-radius: 6px;
-  }
+  box-shadow: var(--shadow-sm);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 `;
 
 export const ProjectSection = styled.div`
   margin: 3rem 0;
-  
+
   h2 {
-    color: #000000ff;
+    color: var(--text);
     margin-bottom: 1rem;
-    font-size: 1.8rem;
-    
-    @media (max-width: 768px) {
-      font-size: 1.6rem;
-    }
-    
-    @media (max-width: 480px) {
-      font-size: 1.4rem;
-    }
+    font-size: 1.5rem;
   }
-  
+
   p {
-    color: rgb(119, 119, 121);
-    line-height: 1.6;
+    color: var(--muted);
+    line-height: 1.7;
     margin-bottom: 1rem;
-    
-    @media (max-width: 768px) {
-      font-size: 0.95rem;
-    }
   }
-  
+
   ul {
-    color: rgb(119, 119, 121);
-    
+    color: var(--muted);
+
     li {
-      margin-bottom: 0.5rem;
-      
-      @media (max-width: 768px) {
-        font-size: 0.95rem;
-      }
+      margin-bottom: 0.6rem;
     }
-  }
-  
-  @media (max-width: 768px) {
-    margin: 2rem 0;
   }
 `;
 
@@ -144,72 +93,207 @@ export const TechStack = styled.div`
   flex-wrap: wrap;
   gap: 10px;
   margin: 1rem 0;
-  
-  @media (max-width: 480px) {
-    gap: 8px;
-    justify-content: center; 
-  }
+  justify-content: center;
 `;
 
 export const TechBadge = styled.span`
-  background: #f5f5f5;
-  color: #333;
-  padding: 5px 15px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  
-  @media (max-width: 480px) {
-    padding: 4px 12px;
-    font-size: 0.8rem;
-  }
+  background: var(--surface-2);
+  color: var(--muted);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(255, 255, 255, 0.08);
 `;
 
 export const Screenshots = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 1rem 0;
-  width: 100%; 
+  flex-direction: column;
+  gap: 2rem;
+  margin: 1.5rem 0;
+  width: 100%;
 
   img {
-    flex: 1 1 calc(100% - 10px); 
-    max-width: calc(100% - 10px); 
-    min-width: 200px; 
-    object-fit: cover;
-    border-radius: 10px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-    
+    width: 100%;
+    max-width: 900px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin: 0 auto;
+    display: block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: zoom-in;
+
+    &:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4);
+    }
 
     @media (max-width: 768px) {
-      flex: 1 1 calc(100% - 10px);
-      max-width: calc(100% - 10px);
+      border-radius: 12px;
+      
+      &:hover {
+        transform: scale(1.01);
+      }
     }
-    
+  }
+`;
 
-    @media (max-width: 480px) {
-      flex: 1 1 100%;
-      max-width: 100%;
+export const ScreenshotSection = styled(ProjectSection)`
+  margin: 4rem 0;
+
+  h2 {
+    font-size: 1.6rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  @media (max-width: 768px) {
+    margin: 3rem 0;
+    
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 1.5rem;
     }
   }
 `;
 
 export const ButtonGroup = styled.div`
   display: flex;
-  gap: 1rem;
+  gap: 0.8rem;
   justify-content: center;
   margin: 3rem 0;
-  
-  @media (max-width: 768px) {
-    align-items: center;
-    gap: 0.8rem;
-    margin: 2rem 0;
-    justify-content: center;
+  flex-wrap: wrap;
+`;
+
+export const LightboxOverlay = styled.div`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.9);
+  backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
   }
-    @media (max-width: 240px) {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-    margin: 2rem 0;
-    justify-content: center;
+`;
+
+export const LightboxContent = styled.div`
+  position: relative;
+  max-width: 95vw;
+  max-height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+`;
+
+export const LightboxImage = styled.img`
+  max-width: 100%;
+  max-height: 85vh;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  animation: scaleIn 0.3s ease;
+
+  @keyframes scaleIn {
+    from { 
+      opacity: 0;
+      transform: scale(0.8);
+    }
+    to { 
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @media (max-width: 768px) {
+    max-height: 80vh;
+    border-radius: 8px;
+  }
+`;
+
+export const LightboxClose = styled.button`
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    top: -2.5rem;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+`;
+
+export const LightboxNavButton = styled.button`
+  position: absolute;
+  top: 50%;
+  ${props => props.position}: -4rem;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(8px);
+  font-weight: 300;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+  }
+
+  @media (max-width: 768px) {
+    ${props => props.position}: -2rem;
+    font-size: 2rem;
+    width: 3rem;
+    height: 3rem;
+  }
+
+  @media (max-width: 576px) {
+    ${props => props.position}: 0.5rem;
+    top: auto;
+    bottom: 1rem;
+    transform: none;
+    font-size: 1.5rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 `;

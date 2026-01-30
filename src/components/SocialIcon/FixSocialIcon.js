@@ -4,53 +4,97 @@ import styled from "@emotion/styled";
 import ScrollAnimation from "react-animate-on-scroll";
 
 const SocialContainer = styled.div`
-  position: fixed;
-  top: 48%;
-  left: 1.5rem;
-  transform: translateY(-50%);
+  /* Desktop styling - fixed position on the side */
+  @media screen and (min-width: 1001px) {
+    position: fixed;
+    top: 48%;
+    left: 1.5rem;
+    transform: translateY(-50%);
+    z-index: 5;
 
-  ul {
-    display: block;
-  }
-
-  .item + .item {
-    margin-top: 1rem;
-  }
-
-  a {
-    font-size: 2.3rem;
-    color: rgb(119, 119, 121);
-    &:hover {
-      color: rgb(57, 134, 250);
-    }
-  }
-
-  @media screen and (max-width: 1000px) {
-    margin-top: 2rem;
-    position: relative;
-    top: 0;
-    left: 0;
     ul {
       display: flex;
-      justify-content: center;
-      align-items: center;
-      list-style: none;
+      flex-direction: column;
+      gap: 0.8rem;
+      background: rgba(20, 24, 36, 0.9);
+      padding: 0.7rem 0.6rem;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
     }
 
     a {
-      font-size: 2.5rem;
-      color: #151418;
+      font-size: 1.6rem;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+
       &:hover {
-        color: rgb(57, 134, 250);
+        color: var(--text);
+        transform: translateY(-2px);
       }
     }
+  }
 
-    .item + .item {
-      margin-top: 0;
-      margin-left: 2rem;
+  /* Tablet and mobile - completely remove from fixed positioning */
+  @media screen and (max-width: 1000px) {
+    position: static;
+    display: block;
+    margin: 2rem auto 1rem;
+    padding: 0 1rem;
+    text-align: center;
+    z-index: auto;
+
+    ul {
+      display: inline-flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 1.2rem;
+      background: rgba(20, 24, 36, 0.95);
+      padding: 0.8rem 1.5rem;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 999px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    a {
+      font-size: 1.5rem;
+      color: var(--muted);
+      transition: color 0.2s ease, transform 0.2s ease;
+
+      &:hover {
+        color: var(--text);
+        transform: translateY(-2px);
+      }
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    margin: 1.5rem auto 0.5rem;
+    
+    ul {
+      gap: 1rem;
+      padding: 0.7rem 1.2rem;
+    }
+
+    a {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    margin: 1rem auto 0.5rem;
+    
+    ul {
+      gap: 0.8rem;
+      padding: 0.6rem 1rem;
+    }
+
+    a {
+      font-size: 1.2rem;
     }
   }
 `;
+
 function FixSocialIcon() {
   return (
     <SocialContainer>

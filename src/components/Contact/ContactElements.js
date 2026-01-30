@@ -1,30 +1,34 @@
 import styled from "@emotion/styled";
 
-export const ContactWrapper = styled.div`
-  margin: 5rem 0;
+export const ContactWrapper = styled.section`
+  position: relative;
 `;
 
 export const Email = styled.div`
   display: flex;
   align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: center;
   row-gap: 1rem;
+  width: 100%;
 
   span {
-    font-size: 1rem;
-    font-weight: 400;
+    font-size: 1.05rem;
+    font-weight: 600;
   }
 
-  @media (min-width: 576px) {
-    span {
-      font-size: 1.25rem;
-    }
+  .contact-email {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    flex-wrap: wrap;
+    justify-content: center;
   }
-  @media (min-width: 992px) {
-    span {
-      font-size: 1.5rem;
-    }
-  }
+`;
+
+export const ContactActions = styled.div`
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+  justify-content: center;
 `;

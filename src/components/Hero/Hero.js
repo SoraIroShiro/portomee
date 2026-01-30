@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Dropdown from "../Dropdown/Dropdown";
 import Header from "../Header/Header";
 import {
@@ -6,116 +6,164 @@ import {
   HeroWrapper,
   HeroLeft,
   HeroRight,
-  Image,
+  Eyebrow,
+  HeroTitle,
+  HeroSubtitle,
+  RoleText,
+  HeroActions,
+  HeroHighlights,
+  HighlightCard,
+  PortraitCard,
+  PortraitImage,
+  PortraitTag,
+  PortraitMeta,
   ScrollDown,
   ScrollLink,
 } from "./HeroElements";
-import { TypeAnimation } from 'react-type-animation';
+import { TypeAnimation } from "react-type-animation";
 import ScrollAnimation from "react-animate-on-scroll";
+import { Link as LinkScroll } from "react-scroll";
 
 function Hero() {
   const [isOpen, setIsOpen] = useState(false);
-  const [showSubtitle, setShowSubtitle] = useState(false);
   const [showScrollDown, setShowScrollDown] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const toggle = () => {
     setIsOpen(!isOpen);
   };
+
+  useEffect(() => {
+    // Show scroll indicator after initial animations
+    const timer = setTimeout(() => setShowScrollDown(true), 2500);
+    
+    // Scroll-triggered effects
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      setScrollY(currentScrollY);
+      
+      // Show/hide scroll indicator based on position
+      // Show when at top (hero section), hide when scrolled down
+      if (currentScrollY < 50) {
+        setShowScrollDown(true);
+      } else if (currentScrollY > window.innerHeight * 0.2) {
+        setShowScrollDown(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  // Parallax effect calculation
+  const parallaxOffset = scrollY * 0.5;
+
   return (
     <main>
       <Dropdown isOpen={isOpen} toggle={toggle} />
       <Header toggle={toggle} />
-      <HeroContainer>
-        <HeroWrapper>
+      <HeroContainer id="home">
+        <HeroWrapper style={{ transform: `translateY(-${parallaxOffset}px)` }}>
           <HeroLeft>
-            <ScrollAnimation animateIn="fadeIn" >
-              <TypeAnimation
-                cursor={false}
-                sequence={[
-                  'Hi, I\'m Fiqi',
-                  () => setShowSubtitle(true)
-                ]}
-                speed={{ type: "keyStrokeDelayInMs", value: 150 }}
-                wrapper="h1"
-                repeat={0}
-              />
-              {showSubtitle &&
+            <ScrollAnimation 
+              animateIn="fadeIn" 
+              animateOnce={true}
+              delay={300}
+              duration={0.8}
+            >
+              <Eyebrow>Portfolio</Eyebrow>
+              <HeroTitle>
+                Mochammad Fiqi Fahrudillah
+              </HeroTitle>
+              <HeroSubtitle>
+                who builds reliable web products with clear UI, clean architecture, and thoughtful performance.
+              </HeroSubtitle>
+              <RoleText>
                 <TypeAnimation
                   cursor={true}
                   sequence={[
-                    500,
-                    'A Junior Full-Stack Developer.',
+                    "",
                     1000,
-                    'A Tech AI Enthusiast Student.',
-                    1000,
-                    'A problem solver.',
-                    1000,
-                    'A....',
-                    1000,
-                    'A.... cool guy? 😂',
-                    1000,
-                    "Ok...",
-                    1000,
-                    "Ok...  I'm running out of ideas...",
-                    1000,
-                    "Uhh...",
-                    1000,
-                    "Uhh... you can scroll down to see my projects now...",
-                    300,
-                    () => setShowScrollDown(true),
-                    1000,
-                    "Seriously, my projects are really cool, go check them out!",
-                    1000,
-                    "You're uh...",
-                    1000,
-                    "You're uh... still here?",
-                    1000,
-                    "Ok, this has been fun, but I'm gonna restart the loop now...",
-                    1000,
-                    "Wait, did you know that 99% of programmers hate CSS?",
-                    1000,
-                    "The other 1% are lying! 😂",
-                    1000,
-                    "Or...",
-                    1000, 
-                    "Why do programmers prefer dark mode?",
-                    1000,
-                    "Because light attracts bugs! 🐛",
-                    1000,
-                    "Ba dum tss! 🥁",
-                    1000,
-                    "See ya! :)",
-                    500,
+                    "React, Next.js, and modern JS.",
+                    2000,
+                    "Cloud, APIs, and ML pipelines.",
+                    2000,
                   ]}
-                  speed={50}
-                  deletionSpeed={65}
-                  wrapper="h5"
+                  speed={55}
+                  deletionSpeed={40}
                   repeat={Infinity}
                 />
-              }
+              </RoleText>
+              <ScrollAnimation 
+                animateIn="fadeInUp" 
+                animateOnce={true}
+                delay={800}
+                duration={0.6}
+              >
+                <HeroActions>
+                  <LinkScroll
+                    className="btn PrimaryBtn btn-shadow"
+                    to="projects"
+                    smooth={true}
+                    duration={500}
+                    offset={-40}
+                  >
+                    View Projects
+                  </LinkScroll>
+                  <a
+                    className="btn SecondaryBtn"
+                    href="/resume/resume_fiqi.pdf"
+                    download="resume_fiqi.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Download Resume
+                  </a>
+                </HeroActions>
+              </ScrollAnimation>
+              <ScrollAnimation 
+                animateIn="fadeInUp" 
+                animateOnce={true}
+                delay={1000}
+                duration={0.6}
+              >
+                <HeroHighlights>
+                  <HighlightCard>Full-stack</HighlightCard>
+                  <HighlightCard>Cloud</HighlightCard>
+                  <HighlightCard>ML</HighlightCard>
+                </HeroHighlights>
+              </ScrollAnimation>
             </ScrollAnimation>
-
           </HeroLeft>
           <HeroRight>
-            <ScrollAnimation animateIn="fadeIn">
-              <Image
-                src="/me/about_me.png"
-                alt="man-svgrepo"
-              />
+            <ScrollAnimation 
+              animateIn="fadeInRight" 
+              animateOnce={true}
+              delay={600}
+              duration={0.8}
+            >
+              <PortraitCard>
+                <PortraitImage src="/me/about_me.png" alt="Portrait" />
+              </PortraitCard>
             </ScrollAnimation>
           </HeroRight>
         </HeroWrapper>
-        {showScrollDown &&<ScrollAnimation animateIn="flipInX" offset={0}>
-        <ScrollDown to="projects" id="scrollDown">
+        <ScrollDown 
+          to="projects" 
+          smooth={true} 
+          duration={800} 
+          offset={-40}
+          isVisible={showScrollDown}
+        >
           <ScrollLink>
-            Scroll down
-            <img
-              src="/scroll-down.svg"
-              alt="scroll-down"
-            />
+            Scroll for more
+            <img src="/scroll-down.svg" alt="scroll-down" />
           </ScrollLink>
         </ScrollDown>
-        </ScrollAnimation>}
       </HeroContainer>
     </main>
   );

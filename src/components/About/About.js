@@ -9,44 +9,49 @@ import {
   ContactWrapper,
 } from "./AboutElements";
 import ScrollAnimation from "react-animate-on-scroll";
+
 function About() {
   return (
-    <ContactWrapper id="about">
+    <ContactWrapper id="about" className="Section">
       <div className="Container">
-        <div className="SectionTitle">About Me</div>
+        <div className="SectionTitle">About</div>
+        <div className="SectionSubtitle">
+          I care about simple, reliable systems and clean product design.
+        </div>
         <div className="BigCard">
-          <ScrollAnimation animateIn="fadeInLeft">
-            <Image src="/me/about.jpg" alt="man-svgrepo" />
-          </ScrollAnimation>
-          <div className="AboutBio">
-            <ScrollAnimation animateIn="fadeInLeft">
-              Hello! My name is <strong>Mochammad Fiqi Fahrudillah</strong>. A
-              proactive Informatics Engineering student with hands-on experience
-              in Front-End Development, AWS Cloud, and Machine Learning. I have
-              successfully migrated a system from Laravel to React, developed a
-              web aggregation project using Next.js, and engineered a backend
-              API with Flask for a machine learning model that detects pediatric
-              dental cavities. I am currently deepening my expertise by
-              independently building a WEB project based on NEXT JS for asset
-              storage and dataset processing from API-based scraping.
+          <div className="AboutGrid">
+            <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+              <Image src="/me/about.jpg" alt="Fiqi" />
             </ScrollAnimation>
-
-            <br />
-            <br />
-
-
-
-            <Technologies>
-              {stackList.map((stack, index) => (
-                <ScrollAnimation animateIn="fadeInLeft" key={index}>
-                  <Tech key={index} className="tech">
-                    <TechImg src={stack.img} alt={stack.name} />
-                    <TechName>{stack.name}</TechName>
-                  </Tech>
-                </ScrollAnimation>
-              ))}
-            </Technologies>
+            <div className="AboutContent">
+              <ScrollAnimation animateIn="fadeIn" animateOnce={true}>
+                <div className="AboutBio">
+                  Hello! My name is <strong>Mochammad Fiqi Fahrudillah</strong>.
+                  I am an Informatics Engineering student with experience in
+                  front-end development, AWS cloud, and machine learning. I have
+                  migrated a Laravel system to React, built a web aggregation
+                  platform with Next.js, and engineered a Flask API for a
+                  pediatric dental cavity detection model.
+                </div>
+              </ScrollAnimation>
+              <div className="AboutStats">
+                <div className="StatCard">Product-minded engineering</div>
+                <div className="StatCard">Cloud and API integrations</div>
+                <div className="StatCard">Applied machine learning</div>
+              </div>
+            </div>
           </div>
+          <div className="TechStackTitle">Toolbox</div>
+          <Technologies>
+            {stackList.map((stack, index) => (
+              <ScrollAnimation animateIn="fadeIn" key={index} animateOnce={true}>
+                <Tech key={index} className="tech">
+                  <TechImg src={stack.img} alt={stack.name} />
+                  <TechName>{stack.name}</TechName>
+                </Tech>
+              </ScrollAnimation>
+            ))}
+          </Technologies>
         </div>
       </div>
     </ContactWrapper>

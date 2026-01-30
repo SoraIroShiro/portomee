@@ -8,17 +8,17 @@ import {
   TechCardContainer,
   TechCard,
   BtnGroup,
+  CardTag,
 } from "./ProjectCardElements";
 import ScrollAnimation from "react-animate-on-scroll";
+
 function ProjectCard() {
   const navigate = useNavigate();
 
   const handleImageClick = (projectId) => {
-    console.log('Image clicked! Project ID:', projectId);
     try {
       navigate(`/project/${projectId}`);
     } catch (error) {
-      console.error('Navigation error:', error);
       alert(`Navigating to project: ${projectId}`);
     }
   };
@@ -26,52 +26,55 @@ function ProjectCard() {
   return (
     <>
       {ProjectList.map((list, index) => (
-        <ScrollAnimation animateIn="fadeInLeft" key={index}>
+        <ScrollAnimation animateIn="fadeIn" key={index}>
           <Card>
             <CardLeft>
-              <img 
-                src={list.img} 
-                alt={list.name}
+              <img
+                src={list.img}
+                alt={list.title}
                 onClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  console.log('Image clicked!', list.id || index);
                   handleImageClick(list.id || index);
                 }}
-                style={{
-                  cursor: "pointer",
-                  userSelect: "none",
-                  pointerEvents: "auto"
-                }} 
+                style={{ cursor: "pointer" }}
               />
             </CardLeft>
             <CardRight>
+              <CardTag>Case Study</CardTag>
               <h4>{list.title}</h4>
               <p>{list.description}</p>
               <TechCardContainer>
-                {list.tech_stack.map((tech, index) => (
-                  <TechCard key={index}>{tech}</TechCard>
+                {list.tech_stack.map((tech, techIndex) => (
+                  <TechCard key={techIndex}>{tech}</TechCard>
                 ))}
               </TechCardContainer>
               <BtnGroup>
+                <button
+                  className="btn SecondaryBtn"
+                  type="button"
+                  onClick={() => handleImageClick(list.id || index)}
+                >
+                  Details
+                </button>
                 {list.github_url.length > 0 && (
                   <a
-                    className="btn SecondaryBtn btn-shadow"
+                    className="btn SecondaryBtn"
                     href={list.github_url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Github
+                    GitHub
                   </a>
                 )}
                 {list.demo_url.length > 0 && (
                   <a
-                    className="btn SecondaryBtn btn-shadow"
+                    className="btn PrimaryBtn btn-shadow"
                     href={list.demo_url}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Demo ➜
+                    Live Demo
                   </a>
                 )}
               </BtnGroup>
