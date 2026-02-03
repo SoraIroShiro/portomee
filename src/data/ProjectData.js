@@ -1,7 +1,7 @@
 // --------------------------------------- Project List
 export const ProjectList = [
   {
-    id: "private-project",
+    id: "self-project",
     img: "/project/soranime-stream/soranime-1.png",
     title: "Soranime Streaming",
     description:
@@ -45,6 +45,58 @@ export const ProjectList = [
       "/project/soranime-stream/soranime-5.png",
       "/project/soranime-stream/soranime-6.png",
       "/project/soranime-stream/soranime-7.png",
+    ],
+  },
+  {
+    id: "Thesis-project",
+    img: "/project/sentiment-analyst/sa-1.png",
+    title:
+      "Genshin Impact Player Review Sentiment Analysis (TF-IDF + SVM + Lexicon + LLM)",
+    description:
+      "A sentiment analysis research project that scrapes 40,000 Google Play reviews (2023–2025), builds pseudo ground-truth with lexicon-based labeling, trains a TF-IDF (1–3 n-gram) + Linear SVM classifier, and delivers evaluation, visual insights, and LLM-based theme summarization.",
+
+    tech_stack: [
+      "Python",
+      "Pandas",
+      "scikit-learn",
+      "TF-IDF (n-gram 1–3)",
+      "Linear SVM (LinearSVC)",
+      "Sastrawi (Indonesian stemming)",
+      "google-play-scraper",
+      "IBM Granite (LLM Summarization)",
+      "Matplotlib",
+      "WordCloud",
+    ],
+
+    github_url: "https://github.com/SoraIroShiro/Project-Analisis-Sentimen-genshin-BE",
+    demo_url: "https://ejurnal.umri.ac.id/index.php/JIK/article/view/10553", 
+
+    fullDescription:
+      "This research analyzes player sentiment toward Genshin Impact using Google Play Store reviews. The workflow includes data collection via web scraping, text preprocessing (cleaning, normalization, tokenization, stopword removal, stemming), pseudo ground-truth generation using a domain-specific sentiment lexicon, feature extraction with TF-IDF (1–3 n-grams), and sentiment classification using Linear SVM with an 80/20 stratified split and repeated runs for stability. The study also applies rule-based post-processing to improve domain semantics (e.g., negation and technical complaint patterns), visualizes sentiment distribution and keywords (WordCloud), and uses an LLM (IBM Granite) to summarize dominant praise/complaint themes.",
+
+    features: [
+      "Scraped 40,000 Google Play Store reviews (2023–2025) as the raw dataset",
+      "Data validation and cleaning (remove duplicates/empty entries) to produce a final usable dataset",
+      "Indonesian NLP preprocessing: lowercase, regex cleaning, slang normalization, tokenization, stopwords removal, and Sastrawi stemming",
+      "Lexicon-based labeling to generate pseudo ground truth with a domain-specific expanded lexicon",
+      "TF-IDF feature extraction using n-gram (1–3) with feature limiting for efficiency",
+      "Linear SVM (LinearSVC) training with stratified 80/20 train–test split and balanced class weighting",
+      "Multi-metric evaluation (accuracy, precision, recall, F1) and confusion matrix analysis",
+      "Rule-based post-processing to correct sentiment for domain patterns (negation, contrast words, technical complaints)",
+      "Visualization of sentiment distribution and WordClouds for keyword/theme exploration",
+      "LLM summarization (IBM Granite) on proportional samples to extract key praise vs complaint themes",
+    ],
+
+    challenges:
+      "Key challenges included creating reliable labels without manual annotation and handling domain-specific language (negation, mixed sentiments, and technical issue terms). These were addressed by building a domain-expanded lexicon for pseudo ground truth and applying rule-based post-processing to improve semantic correctness, then complementing quantitative results with visual analysis and LLM-generated theme summaries.",
+    screenshots: [
+      "/project/sentiment-analyst/sa-1.png",
+      "/project/sentiment-analyst/sa-2.png",
+      "/project/sentiment-analyst/sa-3.png",
+      "/project/sentiment-analyst/sa-4.png",
+      "/project/sentiment-analyst/sa-5.png",
+      "/project/sentiment-analyst/sa-6.png",
+      "/project/sentiment-analyst/sa-7.png",
     ],
   },
 ];
