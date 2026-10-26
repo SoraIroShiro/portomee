@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fiqiportofolio.vercel.app" }],
+      "destination": "https://www.fiqifahrudillah.my.id/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "fiqifahrudillah.my.id" }],
+      "destination": "https://www.fiqifahrudillah.my.id/:path*",
+      "permanent": true
+    }
+  ],
+  "rewrites": [
+    { "source": "/((?!robots\\.txt|sitemap\\.xml|google.*\\.html).*)", "destination": "/index.html" }
+  ]
+}
